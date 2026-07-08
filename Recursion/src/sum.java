@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
-public class max {
-    static  int max(int arr[], int i){
-        if(i==0){
-            return arr[i];
-        }
-        int Max=max(arr,i-1);
-        return Math.max(Max,arr[i]);
+public class sum {
+    static int Sum(int arr[], int i){
+        int arr_sum=0;
+        if(i==0) return (arr_sum+=arr[i]);
+        arr_sum =Sum(arr,i-1);
+        return arr_sum+arr[i];
     }
-
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter array followed by its size to print");
@@ -20,6 +18,6 @@ public class max {
             i++;
         }
         n-=1;
-        System.out.println("Maximum element is: "+max(arr,n));
+        System.out.println("Sum of the array is: "+Sum(arr,n));
     }
 }
